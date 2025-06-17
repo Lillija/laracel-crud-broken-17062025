@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AlgoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,5 +26,6 @@ Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('book.ed
 Route::put('/books/{book}/update', [BookController::class, 'update'])->name('book.update');
 Route::delete('/books/{book}/destroy', [BookController::class, 'destroy'])->name('book.destroy');
 
+Route::match(['get', 'post'], '/bubbleSort', [AlgoController::class, 'bubbleSort'])->name('algo.bubbleSort');
 
 require __DIR__.'/auth.php';
