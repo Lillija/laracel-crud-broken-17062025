@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <form action="{{ route('book.destroy') }}" method="post">
+    <form action="{{ route('book.destroy', $singleBook) }}" method="POST">
         @csrf
         @method('delete')
         <input type="submit" value="Dzēst">
